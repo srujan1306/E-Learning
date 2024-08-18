@@ -1,0 +1,5 @@
+<div class="all-recipes-container">
+  @for(course of courses; track course.courseId) {
+  <app-coursecard [coursecard]="course" [courseId]="course.courseId" />
+  }
+</div>

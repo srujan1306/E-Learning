@@ -1,0 +1,28 @@
+<body>
+  <mat-card class="wholecontainer">
+    <div class="container">
+      <img src="{{ coursecard.imageUrl }}" alt="Extraordinary" />
+      <div class="headingAndRating">
+        <h6>
+          {{ coursecard.name }}
+        </h6>
+        <p class="rating">
+          ⭐
+          {{ coursecard.rating }}
+        </p>
+      </div>
+      <p>By : {{ coursecard.instructor }}</p>
+
+      <div class="category">
+        <p>Category :{{ coursecard.category }}</p>
+      </div>
+    </div>
+    <!-- <p class="summary" style="display: none">{{ movies_data.summary }}</p> -->
+
+    <!-- <button class="details" (click)="getrecipebyindex(idx)">details</button> -->
+    <p class="price">
+      {{ coursecard.price | currency : "INR" }}
+    </p>
+    <!-- <mat-icon class="delete-button" color="warn">delete</mat-icon> -->
+  </mat-card>
+</body>
