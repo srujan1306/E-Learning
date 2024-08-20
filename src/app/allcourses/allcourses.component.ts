@@ -87,4 +87,9 @@ export class AllcoursesComponent implements OnInit {
       course.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
+  deleteCourse(course_to_be_deleted: any) {
+    this.courseService
+      .delete_the_course(course_to_be_deleted)
+      .then(() => this.loadCourses());
+  }
 }

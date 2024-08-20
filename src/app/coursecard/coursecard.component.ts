@@ -29,4 +29,9 @@ import { CurrencyPipe } from '@angular/common';
 export class CoursecardComponent {
   @Input() coursecard: any;
   @Input() courseId!: string;
+  @Output() delete_the_course = new EventEmitter<any>();
+
+  deleteCourse() {
+    this.delete_the_course.emit(this.coursecard);
+  }
 }

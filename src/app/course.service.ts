@@ -13,4 +13,9 @@ export class CourseService {
   getCourseById(courseId: string) {
     return fetch(`${API}/Elearn/${courseId}`).then((res) => res.json());
   }
+  delete_the_course(course_to_be_deleted: any) {
+    return fetch(`${API}/Elearn/${course_to_be_deleted.courseId}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
+  }
 }

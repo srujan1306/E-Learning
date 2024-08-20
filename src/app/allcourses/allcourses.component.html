@@ -26,6 +26,10 @@
 
 <div class="all-recipes-container">
   @for(course of filteredCourses; track course.courseId) {
-  <app-coursecard [coursecard]="course" [courseId]="course.courseId" />
+  <app-coursecard
+    [coursecard]="course"
+    (delete_the_course)="deleteCourse($event)"
+    [courseId]="course.courseId"
+  />
   }
 </div>
