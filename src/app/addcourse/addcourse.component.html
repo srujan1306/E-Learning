@@ -1,0 +1,37 @@
+<!-- <p>add-recipe works!</p> -->
+<form [formGroup]="courseForm" (ngSubmit)="addCourse()" class="add-course-form">
+  <mat-form-field>
+    <mat-label>Course Name</mat-label>
+    <input matInput placeholder="Java Fundamentals" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput placeholder="199" formControlName="price" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Category </mat-label>
+    <input matInput placeholder="Photography" formControlName="category" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <input matInput placeholder="4.5" formControlName="rating" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Instructor</mat-label>
+    <input matInput placeholder="Srujan " formControlName="instructor" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Prerequisites</mat-label>
+    <input matInput placeholder="C, C++" formControlName="prerequisites" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Image Link</mat-label>
+    <input matInput placeholder="https://" formControlName="imageUrl" />
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Add Course</button>
+</form>
