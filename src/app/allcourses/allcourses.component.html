@@ -12,15 +12,17 @@
 />
 
 <!-- The form -->
-<form class="example" [formGroup]="searchForm">
-  <input
-    type="search"
-    placeholder="Search.."
-    formControlName="searchCourse"
-    name="q"
-  />
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+<div class="searchbar">
+  <form class="example" [formGroup]="searchForm">
+    <input
+      type="search"
+      placeholder="Search.."
+      formControlName="searchCourse"
+      name="q"
+    />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
 
 <div class="all-recipes-container">
   @for(course of filteredCourses; track course.courseId) {
