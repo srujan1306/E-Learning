@@ -1,22 +1,26 @@
-<mat-card class="details">
-  <img src="{{ course.imageUrl }}" class="Image" />
-  <p class="Title">
-    Name:
-    {{ course.name }}
-  </p>
+@if(isLoading){
+<h1>Loading...</h1>
+} @if(course){
+<div class="movie-container">
+  <iframe
+    width="677"
+    height="391"
+    src="https://www.youtube.com/embed/nu_pCVPKzTk"
+    title="Full Stack Web Development for Beginners (Full Course on HTML, CSS, JavaScript, Node.js, MongoDB)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
 
-  <p class="Category">
-    Category:
-    {{ course.category }}
-  </p>
-
-  <p class="Ingredients">
-    Rating:
-    {{ course.rating }}
-  </p>
-
-  <p class="Procedure">
-    By :
-    {{ course.instructor }}
-  </p>
-</mat-card>
+  <div class="movie-content">
+    <div class="movie-spec">
+      <h2 class="movie-title">
+        {{ course.name }}
+      </h2>
+      <p class="movie-rating">⭐ {{ course.rating }}</p>
+    </div>
+    <p class="movie-summary">{{ course.instructor }}</p>
+  </div>
+</div>
+}

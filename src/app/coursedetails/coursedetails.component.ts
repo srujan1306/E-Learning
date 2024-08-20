@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CourseService } from '../course.service';
 import { ActivatedRoute } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
@@ -13,8 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class CoursedetailsComponent {
   course: any;
+  trustedUrl!: SafeUrl;
+
   isLoading: boolean = true;
   msg = '';
+  trailer = 'https://youtu.be/kbvHM2S2_bk';
 
   constructor(
     public courseService: CourseService,
@@ -29,6 +32,9 @@ export class CoursedetailsComponent {
       .then((data) => {
         this.course = data;
         this.isLoading = false;
+        this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+          this.trailer
+        );
       })
       .catch(() => {
         this.isLoading = false;
