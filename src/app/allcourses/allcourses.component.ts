@@ -62,6 +62,7 @@ export class AllcoursesComponent implements OnInit {
       )
       .subscribe((filteredCourses) => {
         this.filteredCourses = filteredCourses;
+        console.log(this.filteredCourses);
       });
   }
 

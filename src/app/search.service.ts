@@ -8,8 +8,6 @@ import { Injectable } from '@angular/core';
 export class SearchService {
   constructor(private http: HttpClient) {}
   searchCourse(searchTerm: string) {
-    return this.http.get(
-      `https://66b0acbf6a693a95b539b996.mockapi.io/Elearn?search=${searchTerm}`
-    );
+    return this.http.get(`http://localhost:4000/Elearn?search=${searchTerm}`);
   }
 }
