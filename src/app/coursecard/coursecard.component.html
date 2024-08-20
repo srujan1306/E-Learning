@@ -12,19 +12,22 @@
         </p>
       </div>
       <p>By : {{ coursecard.instructor }}</p>
-
-      <div class="category">
-        <p>Category :{{ coursecard.category }}</p>
-      </div>
     </div>
     <!-- <p class="summary" style="display: none">{{ movies_data.summary }}</p> -->
 
     <!-- <button class="details" (click)="getrecipebyindex(idx)">details</button> -->
-    <p class="price">
-      {{ coursecard.price | currency : "INR" }}
-    </p>
-    <div class="buybutton">
-      <button mat-raised-button>Buy Now!</button>
+    <div class="priceAndBuyNow">
+      <div class="priceAndCat">
+        <div class="category">
+          <p>Category :{{ coursecard.category }}</p>
+        </div>
+        <p class="price">
+          {{ coursecard.price | currency : "INR" }}
+        </p>
+      </div>
+      <div class="buybutton">
+        <button mat-raised-button>Buy Now!</button>
+      </div>
     </div>
   </mat-card>
 </body>
