@@ -1,5 +1,14 @@
+<form [formGroup]="searchForm">
+  <input
+    type="search"
+    placeholder="search..."
+    formControlName="searchCourse"
+    name="q"
+  />
+</form>
+
 <div class="all-recipes-container">
-  @for(course of courses; track course.courseId) {
+  @for(course of filteredCourses; track course.courseId) {
   <app-coursecard [coursecard]="course" [courseId]="course.courseId" />
   }
 </div>
