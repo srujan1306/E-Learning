@@ -3,7 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AllcoursesComponent } from './allcourses/allcourses.component';
 export interface Course {
-  courseId: number;
+  courseId: string;
   name: string;
   price: number;
   category: string;
@@ -21,5 +21,5 @@ export interface Course {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'E-Learning';
+  category(category: string) {}
 }

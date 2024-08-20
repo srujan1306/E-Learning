@@ -1,5 +1,5 @@
 <body>
-  <mat-card class="wholecontainer">
+  <mat-card class="wholecontainer" routerLink="/allcourses/{{ courseId }}">
     <div class="container">
       <img src="{{ coursecard.imageUrl }}" alt="Extraordinary" />
       <div class="headingAndRating">
@@ -23,6 +23,8 @@
     <p class="price">
       {{ coursecard.price | currency : "INR" }}
     </p>
-    <!-- <mat-icon class="delete-button" color="warn">delete</mat-icon> -->
+    <div class="buybutton">
+      <button mat-raised-button>Buy Now!</button>
+    </div>
   </mat-card>
 </body>

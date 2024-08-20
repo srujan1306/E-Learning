@@ -49,6 +49,7 @@ img {
 }
 h6 {
   margin: 0;
+  line-height: initial;
   padding-left: 11px;
 
   font-size: 16px;
@@ -105,4 +106,8 @@ header {
 p {
   margin: 0px;
   padding-left: 11px;
+}
+.buybutton {
+  display: flex;
+  justify-content: flex-end;
 }

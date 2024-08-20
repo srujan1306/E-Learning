@@ -28,5 +28,5 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class CoursecardComponent {
   @Input() coursecard: any;
-  @Input() courseId!: number;
+  @Input() courseId!: string;
 }
