@@ -47,6 +47,20 @@ export class AddcourseComponent {
       imageUrl: '',
     });
   }
+  ngOnInit() {
+    this.courseForm = this.fb.group({
+      name: 'Full Stack Web Development',
+      price: 199,
+      category: 'Development',
+      rating: 4.8,
+      instructor: 'Jane Doe',
+      description:
+        'Learn to build full-stack web applications using modern technologies like React, Node.js, and MongoDB.',
+      prerequisites: 'Basic understanding of HTML, CSS, and JavaScript.',
+      imageUrl:
+        'https://www.spec-india.com/wp-content/uploads/2020/06/Full_Stack.png',
+    });
+  }
   addCourse() {
     if (this.courseForm.value) {
       let courseadd: NewCourse = this.courseForm.value;
