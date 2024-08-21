@@ -218,6 +218,7 @@ header {
 
 .course-categories {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
   padding: 50px 20px;
@@ -234,7 +235,9 @@ header {
 
 .category-card h3 {
   font-size: 1.5rem;
+  font-family: "Outfit", sans-serif;
   margin-bottom: 10px;
+  line-height: 30px;
 }
 
 .category-card p {
