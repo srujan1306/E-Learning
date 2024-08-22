@@ -7,23 +7,28 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a routerLink="/categories/Business">Business</a>
-      <a routerLink="/categories/Finance">Finance</a>
-      <a routerLink="/categories/IT">IT & Software</a>
-      <a routerLink="/categories/Office">Office Productivity</a>
-      <a routerLink="/categories/Soft">Soft Skills</a>
-      <a routerLink="/categories/Marketing">Marketing</a>
-      <a routerLink="/categories/Lifestyle">Lifestyle</a>
-      <a routerLink="/categories/Photography">Photography</a>
-      <a routerLink="/categories/Design">Design</a>
-      <a routerLink="/categories/Health">Health</a>
-      <a routerLink="/categories/Music">Music</a>
-      <a routerLink="/categories/Teaching">Teaching</a>
-      <a routerLink="/categories/Development">Development</a>
+      <a (click)="refreshComponent('Business')">Business</a>
+      <a (click)="refreshComponent('Finance')">Finance</a>
+      <a (click)="refreshComponent('IT')">IT & Software</a>
+      <a (click)="refreshComponent('Office')">Office Productivity</a>
+      <a (click)="refreshComponent('Soft')">Soft Skills</a>
+      <a (click)="refreshComponent('Marketing')">Marketing</a>
+      <a (click)="refreshComponent('Lifestyle')">Lifestyle</a>
+      <a (click)="refreshComponent('Photography')">Photography</a>
+      <a (click)="refreshComponent('Design')">Design</a>
+      <a (click)="refreshComponent('Health')">Health</a>
+      <a (click)="refreshComponent('Music')">Music</a>
+      <a (click)="refreshComponent('Teaching')">Teaching</a>
+      <a (click)="refreshComponent('Development')">Development</a>
     </div>
   </div>
+
   <a routerLink="/addcourse">Add Course</a>
+  @if (tokenPresence) {
+  <a (click)="onLogout()">Logout</a>
+  } @if (!tokenPresence) {
+
   <a routerLink="/login">Login</a>
-  <a href="#about">About</a>
+  }
 </div>
 <router-outlet></router-outlet>

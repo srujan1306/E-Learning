@@ -5,6 +5,7 @@ import { CoursedetailsComponent } from './coursedetails/coursedetails.component'
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
   {

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginpageComponent {
   loginForm!: FormGroup;
+  tokenGenerated = false;
   constructor(
     public loginService: LoginService,
     private router: Router,
@@ -24,9 +25,15 @@ export class LoginpageComponent {
   }
 
   userLogin() {
-    console.log(this.loginForm.value);
+    // console.log(this.loginForm.value);
     this.loginService.login(this.loginForm.value).then((data) => {
       localStorage.setItem('token', data.token);
+      this.tokenGenerated = true;
+      if (this.tokenGenerated) {
+        this.router.navigate(['/allcourses']);
+      } else {
+        this.router.navigate(['/login']);
+      }
     });
   }
 }

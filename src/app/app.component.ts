@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AllcoursesComponent } from './allcourses/allcourses.component';
 export interface Course {
@@ -20,4 +20,28 @@ export interface Course {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  tokenPresence: boolean = this.checkTokenPresence();
+  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
+
+  refreshView() {
+    this.cdr.detectChanges();
+  }
+  onLogout() {
+    localStorage.removeItem('token');
+    this.tokenPresence = this.checkTokenPresence();
+  }
+
+  private checkTokenPresence(): boolean {
+    return !!localStorage.getItem('token');
+  }
+  refreshComponent(category: string) {
+    this.router
+      .navigate(['/categories', category], {
+        queryParams: { refresh: new Date().getTime() },
+      })
+      .then(() => {
+        this.refreshView(); // Manually trigger change detection
+      });
+  }
+}
