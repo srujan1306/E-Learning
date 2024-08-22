@@ -20,6 +20,4 @@ export interface Course {
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  category(category: string) {}
-}
+export class AppComponent {}

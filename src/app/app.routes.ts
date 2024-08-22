@@ -3,6 +3,7 @@ import { AllcoursesComponent } from './allcourses/allcourses.component';
 import { HomeComponent } from './home/home.component';
 import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
+import { CategoryComponent } from './category/category.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,13 @@ export const routes: Routes = [
   {
     path: 'addcourse',
     component: AddcourseComponent,
+  },
+  {
+    path: 'categories/:category',
+    component: CategoryComponent,
+  },
+  {
+    path: '**',
+    component: HomeComponent,
   },
 ];

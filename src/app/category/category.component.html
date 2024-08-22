@@ -1,0 +1,9 @@
+<div class="all-courses-container">
+  @for(course of filteredCourses; track course.courseId) {
+  <app-coursecard
+    [coursecard]="course"
+    (delete_the_course)="deleteCourse($event)"
+    [courseId]="course.courseId"
+  />
+  }
+</div>
