@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CategoryComponent } from './category/category.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
   {
     path: 'addcourse',
     component: AddcourseComponent,
+  },
+  {
+    path: 'login',
+    component: LoginpageComponent,
   },
   {
     path: 'categories/:category',
