@@ -1,20 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Course } from './app.component';
 import { NewCourse } from './course';
-// const API = 'https://66b0acbf6a693a95b539b996.mockapi.io';
-// const API = 'http://localhost:4000';
-const API = 'https://e-learn-nodejs-backend.onrender.com';
-
+import { API } from './API';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class CourseService {
-  constructor() {}
+  constructor(private router: Router) {}
   getCourses(): Promise<Course> {
     return fetch(`${API}/Elearn`).then((res) => res.json());
   }
   getCourseById(courseId: string) {
-    return fetch(`${API}/Elearn/${courseId}`).then((res) => res.json());
+    return fetch(`${API}/Elearn/${courseId}`, {
+      method: 'GET',
+      headers: {
+        'x-auth-token': localStorage.getItem('token') as string,
+      },
+    }).then((res) => {
+      if (res.status != 200) {
+        this.router.navigate(['/login']);
+        throw new Error('Not Authorized');
+      }
+
+      return res.json();
+    });
   }
   delete_the_course(course_to_be_deleted: any) {
     return fetch(`${API}/Elearn/del/${course_to_be_deleted.courseId}`, {
