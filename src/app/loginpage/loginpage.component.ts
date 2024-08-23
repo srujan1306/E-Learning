@@ -27,10 +27,14 @@ export class LoginpageComponent {
   userLogin() {
     // console.log(this.loginForm.value);
     this.loginService.login(this.loginForm.value).then((data) => {
-      localStorage.setItem('token', data.token);
-      this.tokenGenerated = true;
-      if (this.tokenGenerated) {
-        this.router.navigate(['/allcourses']);
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        this.tokenGenerated = true;
+        if (this.tokenGenerated) {
+          this.router.navigate(['/allcourses']);
+        } else {
+          this.router.navigate(['/login']);
+        }
       } else {
         this.router.navigate(['/login']);
       }

@@ -36,12 +36,9 @@ export class AppComponent {
     return !!localStorage.getItem('token');
   }
   refreshComponent(category: string) {
-    this.router
-      .navigate(['/categories', category], {
-        queryParams: { refresh: new Date().getTime() },
-      })
-      .then(() => {
-        this.refreshView(); // Manually trigger change detection
-      });
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/categories', category]);
+    });
   }
 }
