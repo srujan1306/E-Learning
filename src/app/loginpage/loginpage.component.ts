@@ -31,7 +31,9 @@ export class LoginpageComponent {
         localStorage.setItem('token', data.token);
         this.tokenGenerated = true;
         if (this.tokenGenerated) {
-          this.router.navigate(['/allcourses']);
+          this.router.navigate(['/allcourses']).then(() => {
+            window.location.reload();
+          });
         } else {
           this.router.navigate(['/login']);
         }
