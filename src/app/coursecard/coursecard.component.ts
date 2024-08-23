@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
@@ -31,9 +31,13 @@ export class CoursecardComponent {
   @Input() courseId!: string;
   @Output() delete_the_course = new EventEmitter<any>();
   tokenPresence: boolean = this.checkTokenPresence();
-
+  constructor(private router: Router, private route: ActivatedRoute) {}
   deleteCourse() {
-    this.delete_the_course.emit(this.coursecard);
+    if (localStorage.getItem('token')) {
+      this.delete_the_course.emit(this.coursecard);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
   private checkTokenPresence(): boolean {
     return !!localStorage.getItem('token');
