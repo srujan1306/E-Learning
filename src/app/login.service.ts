@@ -23,4 +23,14 @@ export class LoginService {
       },
     }).then((res) => res.json());
   }
+
+  signup(credentials: User): Promise<TokenResponse> {
+    return fetch(`${API}/users/newuser`, {
+      method: 'POST',
+      body: JSON.stringify(credentials),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
 }

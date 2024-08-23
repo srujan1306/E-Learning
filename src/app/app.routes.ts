@@ -6,6 +6,7 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { authGuard } from './auth.guard';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginpageComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'categories/:category',
