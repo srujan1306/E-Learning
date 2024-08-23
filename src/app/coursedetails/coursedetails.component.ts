@@ -3,11 +3,12 @@ import { CourseService } from '../course.service';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-coursedetails',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatProgressSpinnerModule],
   templateUrl: './coursedetails.component.html',
   styleUrl: './coursedetails.component.scss',
 })
