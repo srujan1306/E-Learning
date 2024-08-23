@@ -1,34 +1,36 @@
 <div class="topnav" id="myTopnav">
-  <a routerLink="/" class="active">E-Learn</a>
-  <a routerLink="/allcourses">All Courses</a>
-  <div class="dropdown">
-    <button class="dropbtn">
-      Categories
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a (click)="refreshComponent('Business')">Business</a>
-      <a (click)="refreshComponent('Finance')">Finance</a>
-      <a (click)="refreshComponent('IT')">IT & Software</a>
-      <a (click)="refreshComponent('Office')">Office Productivity</a>
-      <a (click)="refreshComponent('Soft')">Soft Skills</a>
-      <a (click)="refreshComponent('Marketing')">Marketing</a>
-      <a (click)="refreshComponent('Lifestyle')">Lifestyle</a>
-      <a (click)="refreshComponent('Photography')">Photography</a>
-      <a (click)="refreshComponent('Design')">Design</a>
-      <a (click)="refreshComponent('Health')">Health</a>
-      <a (click)="refreshComponent('Music')">Music</a>
-      <a (click)="refreshComponent('Teaching')">Teaching</a>
-      <a (click)="refreshComponent('Development')">Development</a>
+  <div class="leftItems">
+    <a routerLink="/" class="active">E-Learn</a>
+    <a routerLink="/allcourses">All Courses</a>
+    <div class="dropdown">
+      <button class="dropbtn">
+        Categories
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a (click)="refreshComponent('Business')">Business</a>
+        <a (click)="refreshComponent('Finance')">Finance</a>
+        <a (click)="refreshComponent('IT')">IT & Software</a>
+        <a (click)="refreshComponent('Office')">Office Productivity</a>
+        <a (click)="refreshComponent('Soft')">Soft Skills</a>
+        <a (click)="refreshComponent('Marketing')">Marketing</a>
+        <a (click)="refreshComponent('Lifestyle')">Lifestyle</a>
+        <a (click)="refreshComponent('Photography')">Photography</a>
+        <a (click)="refreshComponent('Design')">Design</a>
+        <a (click)="refreshComponent('Health')">Health</a>
+        <a (click)="refreshComponent('Music')">Music</a>
+        <a (click)="refreshComponent('Teaching')">Teaching</a>
+        <a (click)="refreshComponent('Development')">Development</a>
+      </div>
     </div>
   </div>
 
-  @if (tokenPresence) {
-
-  <a (click)="onLogout()" class="Logout">Logout</a>
-  } @if (!tokenPresence) {
-
-  <a routerLink="/login">Login</a>
-  }
+  <div class="loginlogout">
+    @if (tokenPresence) {
+    <a (click)="onLogout()" class="Logout">Logout</a>
+    } @if (!tokenPresence) {
+    <a routerLink="/login">Login</a>
+    }
+  </div>
 </div>
 <router-outlet></router-outlet>

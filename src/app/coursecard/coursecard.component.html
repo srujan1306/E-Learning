@@ -35,14 +35,15 @@
         >
           <mat-icon>info</mat-icon>
         </button>
+        @if (tokenPresence) {
         <button
           mat-icon-button
           color="warn"
           class="delete"
           (click)="deleteCourse()"
         >
-          <mat-icon>delete</mat-icon>
-        </button>
+          <mat-icon>delete</mat-icon></button
+        >}
       </div>
       <div class="buybutton">
         <button mat-raised-button>Buy Now!</button>

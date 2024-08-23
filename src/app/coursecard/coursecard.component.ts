@@ -30,8 +30,12 @@ export class CoursecardComponent {
   @Input() coursecard: any;
   @Input() courseId!: string;
   @Output() delete_the_course = new EventEmitter<any>();
+  tokenPresence: boolean = this.checkTokenPresence();
 
   deleteCourse() {
     this.delete_the_course.emit(this.coursecard);
+  }
+  private checkTokenPresence(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
