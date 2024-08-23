@@ -13,6 +13,14 @@
   align-items: center;
   padding: 10px;
 }
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.icon {
+  margin-right: 0px;
+}
 
 /* Style the search field */
 form.example input[type="search"] {

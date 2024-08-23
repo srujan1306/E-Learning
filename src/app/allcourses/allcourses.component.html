@@ -22,6 +22,13 @@
     />
     <button type="submit"><i class="fa fa-search"></i></button>
   </form>
+  @if (tokenPresence) {
+  <div class="example-button-container">
+    <button mat-raised-button routerLink="/addcourse">
+      Course<mat-icon class="icon">add</mat-icon>
+    </button>
+  </div>
+  }
 </div>
 
 <div class="all-courses-container">

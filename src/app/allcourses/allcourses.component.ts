@@ -6,11 +6,20 @@ import { SearchService } from '../search.service';
 import { Router, RouterLink } from '@angular/router';
 import { CoursecardComponent } from '../coursecard/coursecard.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-allcourses',
   standalone: true,
-  imports: [CoursecardComponent, ReactiveFormsModule, RouterLink, FormsModule],
+  imports: [
+    CoursecardComponent,
+    ReactiveFormsModule,
+    RouterLink,
+    FormsModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   templateUrl: './allcourses.component.html',
   styleUrls: ['./allcourses.component.scss'],
 })
@@ -20,6 +29,7 @@ export class AllcoursesComponent implements OnInit {
   searchForm!: FormGroup;
   isLoading = true;
   errorMessage: string | null = null;
+  tokenPresence: boolean = this.checkTokenPresence();
 
   constructor(
     private searchService: SearchService,
@@ -92,5 +102,8 @@ export class AllcoursesComponent implements OnInit {
     this.courseService
       .delete_the_course(course_to_be_deleted)
       .then(() => this.loadCourses());
+  }
+  private checkTokenPresence(): boolean {
+    return !!localStorage.getItem('token');
   }
 }

@@ -23,9 +23,9 @@
     </div>
   </div>
 
-  <a routerLink="/addcourse">Add Course</a>
   @if (tokenPresence) {
-  <a (click)="onLogout()">Logout</a>
+
+  <a (click)="onLogout()" class="Logout">Logout</a>
   } @if (!tokenPresence) {
 
   <a routerLink="/login">Login</a>
