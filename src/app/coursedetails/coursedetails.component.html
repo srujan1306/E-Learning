@@ -1,27 +1,50 @@
 @if(isLoading){
 <div class="loader"></div>
-
 } @if(course){
-<div class="course-container">
-  <iframe
-    width="677"
-    height="391"
-    src="https://www.youtube.com/embed/nu_pCVPKzTk"
-    title="Full Stack Web Development for Beginners (Full Course on HTML, CSS, JavaScript, Node.js, MongoDB)"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  ></iframe>
+<div class="parent">
+  <mat-card class="movie-container">
+    <img
+      src="{{ course.imageUrl }}"
+      alt="{{ course.name }}"
+      class="movie-poster"
+    />
 
-  <div class="movie-content">
-    <div class="movie-spec">
-      <h2 class="movie-title">
-        {{ course.name }}
-      </h2>
-      <p class="movie-rating">⭐ {{ course.rating }}</p>
-    </div>
-    <p class="movie-summary">{{ course.instructor }}</p>
-  </div>
+    <mat-card-content>
+      <div class="body">
+        <div class="movie-spec">
+          <h3 class="movie-title">
+            {{ course.name }}
+          </h3>
+        </div>
+        <div class="type">
+          <p><i class="fa-solid fa-list"></i> By :{{ course.instructor }}</p>
+          <p>
+            <i class="fa-regular fa-clock" style="font-size: 20px"></i>
+            {{ course.category }}
+          </p>
+        </div>
+        <p>
+          <i class="fa-solid fa-person-walking"></i>
+          {{ course.bodyPartAffected }}
+        </p>
+
+        <p>
+          <i class="fa-solid fa-star"></i>Prerequisites :
+          {{ course.prerequisites }}
+        </p>
+        <br />
+
+        <p>{{ course.description }}</p>
+        <br />
+        <p>
+          <i
+            class="fa-solid fa-triangle-exclamation"
+            style="font-size: 20px; color: red"
+          ></i>
+          {{ course.cautionAge }}
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
 }
